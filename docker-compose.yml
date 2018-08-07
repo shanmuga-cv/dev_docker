@@ -4,3 +4,15 @@ services:
   dev:
     build: .
     image: dev_img
+    volumes:
+      - ~/git_repo:/opt/git_repo
+    networks:
+      - dev_network
+    stdin_open: true
+    tty: true
+    # container_name: dev
+
+networks:
+  dev_network:
+    external:
+      name: dev_network_1
