@@ -10,7 +10,7 @@ clean:
 	docker-compose down
 
 build:
-	docker-compose build .
+	docker-compose build
 
 create-network:
 	docker network create dev_network_1
