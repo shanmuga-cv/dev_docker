@@ -9,5 +9,6 @@ COPY setup_files/${anaconda_python_setup} /root/setup_files/${anaconda_python_se
 RUN bash /root/setup_files/${anaconda_python_setup} -b -p /opt/anaconda3 -s && echo "export PATH=/opt/anaconda3/bin:$PATH" >> /root/anaconda_enable.sh
 ADD setup_files/${sbt_setup} /opt/
 ENV PATH="/opt/sbt/bin:${PATH}"
+RUN sbt version  # cache sbt library jars
 
 CMD ["bash"]
