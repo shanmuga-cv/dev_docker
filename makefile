@@ -4,7 +4,7 @@ up-scale:
 	docker-compose up -d --scale dev=${scale_count}
 
 up-no-start:
-	docker-compose up --no-start d --scale dev=${scale_count}
+	docker-compose up --no-start --scale dev=${scale_count}
 
 clean:
 	docker-compose down
