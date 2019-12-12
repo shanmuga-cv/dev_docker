@@ -6,13 +6,17 @@ services:
     image: dev_img
     volumes:
       - ~/git_repo:/opt/git_repo
-    networks:
-      - dev_network
+      - ./program_files:/opt/program_files
+      - ./setup_files:/opt/setup_files
+      - ./home_dir:/root/home_dir/
+      - ./install.sh:/opt/install.sh
     stdin_open: true
     tty: true
     # container_name: dev
+    ports:
+      - "18888:8888"
 
 networks:
-  dev_network:
-    external:
-      name: dev_network_1
+  default:
+    external: 
+      name: hf_dev_network
